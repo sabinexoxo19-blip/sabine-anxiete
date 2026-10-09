@@ -1,0 +1,47 @@
+name: Reel test avec la voix
+
+# Fabrique essais/test.mp4 (un seul Reel, avec la voix Azure et la musique), pour validation.
+on:
+  workflow_dispatch:
+    inputs:
+      numero:
+        description: "Numéro du Reel dans frases.py"
+        default: "1"
+      fin_livre:
+        description: "Finir sur la photo du livre (1 = oui, 0 = non)"
+        default: "1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: escritura-repo
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer les outils
+        run: |
+          which ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+          pip install --quiet pillow numpy
+
+      - name: Fabriquer le Reel test
+        env:
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+        run: cd fabrica && python3 test_reel.py "${{ github.event.inputs.numero }}" "${{ github.event.inputs.fin_livre }}"
+
+      - name: Enregistrer le Reel test
+        run: |
+          git config user.name "bot-publicador"
+          git config user.email "bot@users.noreply.github.com"
+          git add -f essais/test.mp4 essais/test.jpg
+          git diff --cached --quiet && exit 0
+          git commit -m "Reel test avec la voix"
+          git pull --rebase
+          git push
