@@ -25,11 +25,25 @@ jobs:
           which ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
           pip install --quiet pillow numpy
 
-      - name: Fabriquer les Reels (1 à 3 heures)
+      - name: Reprendre les voix déjà lues (évite de repayer Azure après un arrêt)
+        uses: actions/cache/restore@v4
+        with:
+          path: .voz_cache
+          key: voz-${{ github.run_id }}
+          restore-keys: voz-
+
+      - name: Fabriquer les Reels (3 à 4 heures)
         env:
           AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
           AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
         run: cd fabrica && python3 construir.py --reanudar
+
+      - name: Garder les voix lues, même en cas d'arrêt
+        if: ${{ always() }}
+        uses: actions/cache/save@v4
+        with:
+          path: .voz_cache
+          key: voz-${{ github.run_id }}
 
       - name: Enregistrer les Reels
         if: ${{ always() }}
