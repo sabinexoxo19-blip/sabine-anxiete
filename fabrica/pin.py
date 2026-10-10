@@ -1,5 +1,5 @@
 """Image Pinterest (1000 x 1500, format 2:3) : en haut le hook et une phrase qui tient seule (la légende) sur le papier crème,
-en bas la photo du livre en main (titre bien lisible).
+en bas la photo du livre (image IA, titre bien lisible).
 
 Essai :  python3 pin.py sortie.jpg
 """
@@ -11,24 +11,24 @@ from PIL import Image
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, AQUI)
-import generar as g                      # noqa: E402
+import generar_b as g                    # noqa: E402
 
 PW, PH = 1000, 1500
-HAUT_PHOTO = 740                         # bande photo en bas
+HAUT_PHOTO = 820                         # bande photo en bas
 FONDU = 60                               # transition douce papier → photo
 PHOTO = os.path.join(AQUI, "libro_1.jpg")
-CADRAGE = (0, 250, 1080, 1049)           # zone de libro_1.jpg où le titre du livre est entier
+CADRAGE = (0, 60, 1312, 1136)            # zone de libro_1.jpg (1312 x 1199) : le livre entier
 
 
 def _reglages():
-    """Adapte la mise en page de generar.py au format Pinterest (le temps du dessin)."""
+    """Adapte la mise en page de generar_b.py au format Pinterest (le temps du dessin)."""
     anciens = {k: getattr(g, k) for k in ("W", "H", "X_MIN", "X_MAX", "CENTRO_HOOK",
                                             "ZONA_TEXTO", "Y_ETIQUETA")}
     g.W, g.H = PW, PH
     g.X_MIN, g.X_MAX = 90, 910
-    g.CENTRO_HOOK = 315
-    g.ZONA_TEXTO = (590, 720)
-    g.Y_ETIQUETA = 110
+    g.CENTRO_HOOK = 262
+    g.ZONA_TEXTO = (470, 640)
+    g.Y_ETIQUETA = 76
     return anciens
 
 
@@ -38,7 +38,8 @@ def generar_pin(hook_txt, phrase, destino, numero=None, seed=1):
         from PIL import ImageDraw
         d = ImageDraw.Draw(Image.new("L", (1, 1)))
         img = g.papel(seed)
-        m_h, m_hk, *_ = g.hook(hook_txt, d)
+        lignes = hook_txt.count("\n") + 1
+        m_h, m_hk, *_ = g.hook(hook_txt, d, tam_max=min(110, int(300 / (1.18 * lignes)) // 2 * 2))
         piezas, _ = g.cuerpo([phrase], d)
         m_t, m_k, _, _ = piezas[0]
         m_e = g.etiqueta(numero, d)

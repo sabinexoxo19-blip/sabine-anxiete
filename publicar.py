@@ -24,7 +24,7 @@ AVISO_COLA_BAJA = 12          # moins de 3 jours de Reels à 4 par jour
 # (dont les horaires programmés peuvent avoir des heures de retard) et ne publie que si un créneau
 # est passé depuis la dernière publication.
 PARIS = ZoneInfo("Europe/Paris")
-CRENEAUX = [(8, 12), (13, 12), (19, 12), (21, 42)]
+CRENEAUX = [(7, 47), (12, 47), (18, 47), (22, 17)]   # décalés de ceux du livre 1 (8 h 12, 13 h 12, 19 h 12, 21 h 42)
 RETARD_MAX = timedelta(hours=2)     # créneau manqué depuis plus longtemps : on attend le suivant
 ECART_MIN = timedelta(hours=2)      # jamais deux Reels à moins de 2 h d'écart
 

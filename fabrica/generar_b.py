@@ -45,7 +45,8 @@ ROJO = (184, 86, 54)               # caligrafía (palabra marcada, firma): coral
 VERDE = (30, 75, 132)              # hook: azul marino de la portada (#1E4B84)
 TINTA = (47, 58, 66)               # texto del cuerpo: pizarra oscura, muy legible
 TERRA = (196, 110, 76)             # etiqueta « VÉRITÉ N° » y @cuenta: coral de la portada
-FIRMA = "@sabine_anxiete"          # PROVISIONAL: a sustituir por la cuenta Instagram definitiva
+FIRMA = "@sabine_anxiete"          # compte Instagram du livre 2 (validé le 10 octobre 2026)
+FIRMA_VALIDEE = True
 NOMBRE = "Sabine"
 
 
@@ -374,10 +375,10 @@ def sin_viuda(toks, fn, fk, d):
     return mejor
 
 
-def hook(texto, d):
+def hook(texto, d, tam_max=132):
     toks = tokens(tipografia(texto))
     forzadas = texto.count("\n") + 1
-    for tam in range(132, 56, -2):
+    for tam in range(tam_max, 40, -2):
         fn, fk = fuente(F_HOOK, tam * SS), f_script(tam * 1.32 * SS)
         lineas, esp = partir(toks, fn, fk, (X_MAX - X_MIN) * SS, d)
         if len(lineas) <= max(forzadas, 4) and (forzadas == 1 or len(lineas) == forzadas):

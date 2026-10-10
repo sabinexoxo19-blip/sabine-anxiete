@@ -16,28 +16,28 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, AQUI)
 sys.path.insert(0, os.path.dirname(AQUI))
 from frases import FRASES          # noqa: E402
-from generar import generar, tipografia        # noqa: E402
+from generar_b import generar, tipografia      # noqa: E402  (format B : hook lisible dès la 1re image)
 
 RAIZ = os.path.dirname(AQUI)
 POSTS = os.path.join(RAIZ, "posts")
 PORTADAS = os.path.join(RAIZ, "portadas")
 COLA = os.path.join(RAIZ, "cola.json")
 
-TITRE = "« 101 vérités que ton hypersensibilité essaie de te dire »"
+TITRE = "« 101 vérités que ton anxiété essaie de te dire »"
 CTA_VERITE = f"Cette vérité vient de mon livre {TITRE}. Le lien est dans mon profil 📖"
 CTA_TEXTE = f"Ce texte vient de mon livre {TITRE}. Le lien est dans mon profil 📖"
 PARTAGE = [
-    "Envoie-le à quelqu'un qui a besoin de le lire aujourd'hui.",
-    "Partage-le avec quelqu'un qu'on a déjà trouvé « trop ».",
-    "Enregistre-le pour le jour où tu l'oublieras.",
+    "Envoie-le à quelqu'un qui en a besoin aujourd'hui.",
+    "Partage-le avec quelqu'un qui se bat contre son anxiété.",
+    "Enregistre-le pour le prochain soir où ton alarme s'emballe.",
 ]
 VOIX = "(voix de synthèse)"
-IA = "(visuel créé par IA)"
-HASHTAG_FIXE = "#hypersensibilite"
-HASHTAGS = ["#hypersensible", "#hautesensibilite", "#sensibilite", "#anxiete",
-            "#emotions", "#bienveillance", "#developpementpersonnel"]
+IA = "(visuel créé par IA)"          # la photo du livre en fin de Reel est une image IA
+HASHTAG_FIXE = "#anxiete"
+HASHTAGS = ["#angoisse", "#stress", "#santementale", "#developpementpersonnel",
+            "#bienveillance", "#confianceensoi", "#lacherprise"]
 
-# Photo du livre en main, ajoutée à la fin des Reels dont la légende renvoie au livre.
+# Photo du livre (image IA), ajoutée à la fin des Reels dont la légende renvoie au livre.
 FIN_LIVRE = "libro_1.jpg"
 
 
@@ -49,11 +49,12 @@ def hashtags(k):
 def legende(i, f):
     """Légende du Reel n° i (0 = premier) de la banque."""
     blocs = [f["leyenda"]]
-    if (i + 1) % 4 == 0:
+    fin_livre = (i + 1) % 4 == 0
+    if fin_livre:
         blocs.append(CTA_VERITE if f["n"] else CTA_TEXTE)
     elif (i + 1) % 4 == 2:
         blocs.append(PARTAGE[(i // 4) % len(PARTAGE)])
-    blocs.append(VOIX)
+    blocs.append(f"{VOIX} {IA}" if fin_livre else VOIX)
     blocs.append(hashtags(i))
     return tipografia("\n\n".join(blocs))
 
@@ -79,7 +80,11 @@ def tache(t):
 
 
 def main():
+    import generar_b
     args = sys.argv[1:]
+    if not generar_b.FIRMA_VALIDEE and "--solo" not in args:
+        sys.exit("Le nom du compte Instagram n'est pas encore validé (FIRMA dans generar_b.py) : "
+                 "fabrication complète refusée pour ne pas graver un faux @ dans les 120 vidéos.")
     reprendre, forcer, sans_voix = "--reanudar" in args, "--forzar" in args, "--sin-voz" in args
     solo = None
     if "--solo" in args:

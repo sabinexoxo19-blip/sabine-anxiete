@@ -2,7 +2,7 @@
 (Pinterest → Créer → Créer des épingles en bloc).
 
 Usage :  python3 pines.py --base https://utilisateur.github.io/depot [--inicio 2026-10-10] [--prueba]
-         --prueba : 3 épingles seulement, dans pinterest_prueba.csv
+         --prueba : 3 épingles seulement, dans pinterest2_prueba.csv
 """
 import argparse
 import csv
@@ -20,25 +20,27 @@ from frases import FRASES          # noqa: E402
 
 RAIZ = os.path.dirname(AQUI)
 DOSSIER = os.path.join(RAIZ, "pines")
-LIEN = "https://www.amazon.fr/dp/B0H8PYJKFB"
-LIVRE = "« 101 vérités que ton hypersensibilité essaie de te dire » de Sabine Mercier"
+LIEN = "https://www.amazon.fr/dp/B0GR8JW5V7"
+LIVRE = "« 101 vérités que ton anxiété essaie de te dire » de Sabine Mercier"
 PARIS = ZoneInfo("Europe/Paris")
-HEURES = [(12, 15), (20, 45)]       # heure de Paris ; le passage à l'heure d'hiver est calculé
+HEURES = [(10, 15), (22, 15)]       # heure de Paris (livre 1 : 12 h 15 et 20 h 45) ; heure d'hiver calculée
 PAR_CSV = 56                        # 28 jours par fichier (Pinterest programme 30 jours à l’avance au maximum)
 
-# (tableau, préfixe du titre, mots-clés)
+# (tableau, préfixe du titre, mots-clés) — tableaux propres au livre 2 (ceux du livre 1 ne sont pas touchés)
 TABLEAUX = {
-    "hyper": ("Hypersensibilité : citations et conseils", "Hypersensibilité",
-              "hypersensibilité, hypersensible, haute sensibilité, citation hypersensibilité"),
-    "anxiete": ("Anxiété et émotions", "Anxiété",
-                "anxiété, gestion des émotions, stress, apaiser son anxiété"),
-    "quotidien": ("Hypersensible au quotidien", "Hypersensible",
-                  "hypersensible, fatigue émotionnelle, besoin de calme, introverti"),
-    "citations": ("Citations bienveillance et développement personnel", "Citation",
-                  "citation développement personnel, citations bienveillance, phrase inspirante"),
+    "anxiete": ("Anxiété : comprendre et apaiser", "Anxiété",
+                "anxiété, angoisse, apaiser son anxiété, confiance en soi"),
+    "corps": ("Anxiété et corps : respiration, sommeil, détente", "Anxiété",
+              "respiration anxiété, insomnie anxiété, stress et corps, se détendre"),
+    "pensees": ("Pensées anxieuses et ruminations", "Pensées anxieuses",
+                "pensées anxieuses, rumination, arrêter de trop penser, peur de l'avenir"),
+    "citations": ("Citations anxiété et bienveillance", "Citation",
+                  "citation anxiété, citations bienveillance, phrase apaisante, développement personnel"),
 }
-MOTS_ANXIETE = re.compile(r"anxi|angoiss|stress|panique|crise|alarme|inqui|peur|pire", re.I)
-MOTS_QUOTIDIEN = re.compile(r"soirée|bruit|lampe|café|néon|fatigu|épuis|solitude|repos|lumi|nuit|soir", re.I)
+MOTS_CORPS = re.compile(r"cœur|souffle|respir|inspire|expire|dormi|sommeil|nuit|ventre|corps|mâchoire|marche|"
+                        r"en place|énergie|calme te|matin", re.I)
+MOTS_PENSEES = re.compile(r"pensée|penser|pensent|cerveau|rumin|« et si|imagin|pire|vérifi|certitude|futur|"
+                          r"deviner|esprit|raté|parfait|devrais|chance|sais pas|attention", re.I)
 
 
 def sans_emoji(t):
@@ -52,14 +54,11 @@ def propre(t):
 
 
 def tableau(i, f):
-    txt = f["hook"] + " " + " ".join(f["texto"])
-    if MOTS_ANXIETE.search(f["hook"]):
-        return "anxiete"
-    if MOTS_QUOTIDIEN.search(f["hook"]):
-        return "quotidien"
-    if MOTS_ANXIETE.search(txt) and i % 2:
-        return "anxiete"
-    return ["hyper", "citations"][i % 2]
+    if MOTS_CORPS.search(f["hook"]):
+        return "corps"
+    if MOTS_PENSEES.search(f["hook"]):
+        return "pensees"
+    return ["anxiete", "citations"][i % 2]
 
 
 def titre(f, cle):
@@ -67,13 +66,17 @@ def titre(f, cle):
     k = next((j for j, c in enumerate(h) if c.isalpha()), 0)
     if not h[k:].startswith(("J’", "J'", "« ")) and not h[k:k + 2].isupper():
         h = h[:k] + h[k].lower() + h[k + 1:]
-    t = f"{TABLEAUX[cle][1]} : {h}".replace("'", "’")
+    prefixe = TABLEAUX[cle][1]
+    if prefixe.split()[0].lower()[:6] in h.lower():      # « Anxiété : ton anxiété… » : préfixe inutile
+        t = (h[:k] + h[k].upper() + h[k + 1:]).replace("'", "’")
+    else:
+        t = f"{prefixe} : {h}".replace("'", "’")
     return t if len(t) <= 100 else t[:97].rsplit(" ", 1)[0] + "…"
 
 
 def description(f):
     d = (f"{propre(f['hook'])} {sans_emoji(f['leyenda'])} "
-         f"Une vérité du livre {LIVRE}, pour celles et ceux qu’on a toujours trouvés « trop ». "
+         f"Une vérité du livre {LIVRE}, pour comprendre et apaiser ton anxiété, sans te juger. "
          f"Enregistre-la pour les jours où tu en as besoin.")
     return d.replace("'", "’")[:500]
 
@@ -118,12 +121,12 @@ def main():
             "Pinterest board": TABLEAUX[cle][0],
             "Thumbnail": "",
             "Description": description(f),
-            "Link": f"{LIEN}/ref=pin_{i + 1:04d}",       # un lien différent par épingle
+            "Link": f"{LIEN}/ref=pin2_{i + 1:04d}",      # un lien différent par épingle (pin2_ = livre 2)
             "Publish date": date_utc(jour, h, m),
             "Keywords": TABLEAUX[cle][2],
         })
 
-    essai = os.path.join(RAIZ, "pinterest_prueba.csv")
+    essai = os.path.join(RAIZ, "pinterest2_prueba.csv")
     if not a.prueba and os.path.exists(essai):          # épingles déjà importées avec l’essai : pas de doublon
         with open(essai, encoding="utf-8") as fh:
             deja = {r["Link"] for r in csv.DictReader(fh)}
@@ -132,7 +135,7 @@ def main():
 
     groupes = [lignes] if a.prueba else [lignes[k:k + PAR_CSV] for k in range(0, len(lignes), PAR_CSV)]
     for g_i, groupe in enumerate(groupes, start=1):
-        nom = "pinterest_prueba.csv" if a.prueba else f"pinterest_mois{g_i}.csv"
+        nom = "pinterest2_prueba.csv" if a.prueba else f"pinterest2_mois{g_i}.csv"
         with open(os.path.join(RAIZ, nom), "w", newline="", encoding="utf-8") as fh:
             w = csv.DictWriter(fh, fieldnames=list(groupe[0].keys()))
             w.writeheader()

@@ -3,3 +3,4 @@ portadas/
 __pycache__/
 *.tmp.mp4
 *.tmp
+.DS_Store
