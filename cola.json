@@ -45,10 +45,11 @@
     "verite": null,
     "hook": "Ton anxiété ?\nUn gardien de phare\nqui voit des naufrages\npartout.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-11T20:21:31Z",
     "musica": "leberch-piano-calm-525211.mp3",
     "duracion": 28.34,
-    "portada_ms": 4000
+    "portada_ms": 4000,
+    "media_id": "18130048600825127"
   },
   {
     "archivo": "0005.mp4",
