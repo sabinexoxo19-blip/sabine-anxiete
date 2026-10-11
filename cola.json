@@ -32,10 +32,11 @@
     "verite": 29,
     "hook": "Le futur est une dette\nque tu paies avant\nd'avoir reçu la facture.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-11T16:51:13Z",
     "musica": "leberch-piano-ballad-611630.mp3",
     "duracion": 21.87,
-    "portada_ms": 3230
+    "portada_ms": 3230,
+    "media_id": "17875969857634890"
   },
   {
     "archivo": "0004.mp4",
