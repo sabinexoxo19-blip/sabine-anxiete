@@ -97,10 +97,11 @@
     "verite": 101,
     "hook": "Ton anxiété s'apaisera\nle jour où tu lui diras\nmerci.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-12T20:21:06Z",
     "musica": "leberch-piano-ballad-611630.mp3",
     "duracion": 23.76,
-    "portada_ms": 2930
+    "portada_ms": 2930,
+    "media_id": "18118471571095235"
   },
   {
     "archivo": "0009.mp4",
