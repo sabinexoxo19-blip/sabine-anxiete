@@ -71,10 +71,11 @@
     "verite": 20,
     "hook": "Ton cœur s'accélère ?\nIl ne lâche pas.\nIl se prépare.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-12T10:51:15Z",
     "musica": "leberch-calm-piano-586711.mp3",
     "duracion": 29.57,
-    "portada_ms": 4080
+    "portada_ms": 4080,
+    "media_id": "18119533307071507"
   },
   {
     "archivo": "0007.mp4",
