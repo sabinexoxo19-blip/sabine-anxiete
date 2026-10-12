@@ -58,10 +58,11 @@
     "verite": 25,
     "hook": "Tu n'arrives pas\nà dormir ? Ton cerveau\nrefuse de baisser\nla garde.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-12T05:51:11Z",
     "musica": "nastelbom-emotional-piano-606704.mp3",
     "duracion": 28.85,
-    "portada_ms": 3770
+    "portada_ms": 3770,
+    "media_id": "18109828997615954"
   },
   {
     "archivo": "0006.mp4",
