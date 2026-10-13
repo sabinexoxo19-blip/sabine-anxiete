@@ -110,10 +110,11 @@
     "verite": 22,
     "hook": "Épuisement sans avoir\nrien fait ? Ton alarme\na tourné toute\nla journée.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-13T05:51:13Z",
     "musica": "leberch-piano-calm-525211.mp3",
     "duracion": 26.41,
-    "portada_ms": 4200
+    "portada_ms": 4200,
+    "media_id": "18104590712290189"
   },
   {
     "archivo": "0010.mp4",
