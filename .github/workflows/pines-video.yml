@@ -1,19 +1,11 @@
-name: Épingles vidéo Pinterest
+name: Lots Pinterest (images + vidéos)
 
-# Se lance à la main (onglet Actions → Épingles vidéo Pinterest → Run workflow).
-# Crée pinterest2_video_prueba.csv (3 vidéos, si « Essai » est coché)
-# ou pinterest2_video_mois1.csv, pinterest2_video_mois2.csv… (1 vidéo par jour à 16 h 15).
+# Se lance à la main, une seule fois (onglet Actions → Lots Pinterest → Run workflow).
+# Crée pinterest2_lot01.csv, pinterest2_lot02.csv… : 14 jours chacun,
+# 1 image à 11 h 15 + 1 vidéo à 21 h 15 (heure de Paris). Importer chaque lot 2 ou 3 jours avant sa 1re date.
+# Supprime les anciens fichiers remplacés (pinterest2_mois2.csv, pinterest2_mois3.csv, pinterest2_video_prueba.csv).
 on:
   workflow_dispatch:
-    inputs:
-      inicio:
-        description: "Premier jour de publication (AAAA-MM-JJ). Vide = demain"
-        default: ""
-        required: false
-      prueba:
-        description: "Essai avec 3 vidéos"
-        type: boolean
-        default: true
 
 permissions:
   contents: write
@@ -23,29 +15,24 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  pines-video:
-    runs-on: ubuntu-latest
+  lots:
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
-      - name: Préparer les fichiers
-        env:
-          INICIO: ${{ inputs.inicio }}
-          PRUEBA: ${{ inputs.prueba }}
+      - name: Préparer les lots
         run: |
           OWNER=$(echo "${GITHUB_REPOSITORY%%/*}" | tr '[:upper:]' '[:lower:]')
           BASE="https://${OWNER}.github.io/${GITHUB_REPOSITORY#*/}"
-          ARGS=(--base "$BASE")
-          [ -n "$INICIO" ] && ARGS+=(--inicio "$INICIO")
-          [ "$PRUEBA" = "true" ] && ARGS+=(--prueba)
-          cd fabrica && python3 pines_video.py "${ARGS[@]}"
+          cd fabrica && python3 pines_lots.py --base "$BASE"
 
       - name: Enregistrer
         run: |
           git config user.name "bot-publicador"
           git config user.email "bot@users.noreply.github.com"
-          git add pinterest2_video_*.csv
-          git commit -m "Épingles vidéo Pinterest" || exit 0
+          git rm -q --ignore-unmatch pinterest2_mois2.csv pinterest2_mois3.csv pinterest2_video_prueba.csv
+          git add pinterest2_lot*.csv
+          git commit -m "Lots Pinterest" || exit 0
           git pull --rebase
           git push

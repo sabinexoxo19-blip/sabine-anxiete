@@ -2,7 +2,7 @@
 
 Livre : *101 Vérités que ton anxiété essaie de te dire* — https://www.amazon.fr/dp/B0GR8JW5V7
 
-Ce dépôt fabrique **120 Reels** lus par une voix (30 jours ; 1 sur 4 se termine sur la photo du livre, avec le lien dans la légende), puis **les publie tout seul, 4 fois par jour**. Il fabrique aussi les **épingles Pinterest** (2 par jour) à importer en bloc. Ton ordinateur n'a pas besoin d'être allumé.
+Ce dépôt fabrique **120 Reels** lus par une voix (30 jours ; 1 sur 4 se termine sur la photo du livre, avec le lien dans la légende), puis **les publie tout seul, 4 fois par jour**. Il prépare aussi les **épingles Pinterest** (1 image + 1 vidéo par jour) à importer en bloc. Ton ordinateur n'a pas besoin d'être allumé.
 
 Le robot du livre 1 (dépôt `sabine-reels`) est totalement séparé : rien ici ne le touche.
 
@@ -39,7 +39,8 @@ Dans cron-job.org : un jeton fine-grained **« reveil livre 2 »**, limité à c
 | **Publier sur Instagram** | réveils automatiques | publie le Reel suivant. À la main : **1** = essai, **0** = publier. |
 | **Renouveler la clé Instagram** | chaque lundi | prolonge `IG_TOKEN` (seulement si la clé a plus de 24 h). |
 | **Ajouter la musique** | quand des musiques sont ajoutées | refait le son des Reels pas encore publiés. |
-| **Fabriquer les épingles Pinterest** | à la main | images `pines/` et fichiers `pinterest2_mois1.csv`, `pinterest2_mois2.csv`… |
+| **Fabriquer les épingles Pinterest** | à la main | images `pines/` (déjà faites) |
+| **Lots Pinterest (images + vidéos)** | à la main, une fois | fichiers `pinterest2_lot01.csv`, `pinterest2_lot02.csv`… (14 jours chacun) |
 | **Reel test avec la voix** / **Essai format B** | à la main | Reels d'essai dans `essais/`. |
 
 ---
@@ -47,11 +48,13 @@ Dans cron-job.org : un jeton fine-grained **« reveil livre 2 »**, limité à c
 ## Pinterest (même compte que le livre 1)
 
 - Import en bloc : https://fr.pinterest.com/settings/bulk-create-pins/
-- 2 épingles par jour, **10 h 15 et 22 h 15** (heure de Paris ; le livre 1 publie à 12 h 15 et 20 h 45).
+- **Plafond : 100 épingles programmées par compte, livre 1 et livre 2 ensemble.** Au-delà, Pinterest refuse les lignes (e-mail « Plus de 100 Épingles programmées »).
+- Jusqu'au 7 novembre 2026 : images à 10 h 15 et 22 h 15 (`pinterest2_prueba.csv`, `pinterest2_mois1.csv`, déjà importés ; `pin2_0052` à `0059` refusées par le plafond, reprises dans le lot 01).
+- À partir du 7 novembre 2026 au soir : **1 image à 11 h 15 + 1 vidéo à 21 h 15** (heure de Paris ; le livre 1 publie à 12 h 15 et 20 h 45).
+- Fichiers `pinterest2_lot01.csv`, `lot02`… : 14 jours chacun, **à importer 2 ou 3 jours avant leur première date**, jamais plus tôt (plafond).
 - Tableaux propres au livre 2 : « Anxiété : comprendre et apaiser », « Anxiété et corps : respiration, sommeil, détente », « Pensées anxieuses et ruminations », « Citations anxiété et bienveillance ».
-- Un lien différent par épingle : `…/dp/B0GR8JW5V7/ref=pin2_0001`, `pin2_0002`…
-- Fichiers `pinterest2_*.csv` (le « 2 » évite toute confusion avec ceux du livre 1). Pinterest programme 30 jours à l'avance au maximum : importer chaque fichier moins de 30 jours avant sa dernière date.
-- Faire d'abord l'essai (3 épingles), vérifier dans « Épingles programmées » qu'elles sont bien 3.
+- Un lien différent par épingle : `…/ref=pin2_0001` (images), `…/ref=pin2v_0001` (vidéos).
+- Les vidéos sont les Reels de `posts/` ; image de couverture = celle d'Instagram ; description avec « Voix de synthèse ».
 
 ---
 
@@ -71,6 +74,7 @@ Dans cron-job.org : un jeton fine-grained **« reveil livre 2 »**, limité à c
 | « La vidéo n'est pas accessible » | GitHub Pages pas activé, ou attendre 5 minutes |
 | « ERROR API … 190 » / « OAuthException » | la clé Instagram a expiré : en refaire une et remplacer `IG_TOKEN` |
 | « La file est vide » | il faut un nouveau lot de Reels |
+| E-mail Pinterest « Plus de 100 Épingles programmées » | lot importé trop tôt : réimporter le même fichier plus tard (pas de doublon) |
 | cron-job.org affiche 401 ou 403 | le jeton « reveil livre 2 » a expiré : en créer un nouveau |
 
 ---
