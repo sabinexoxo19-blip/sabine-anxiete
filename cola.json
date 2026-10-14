@@ -188,10 +188,11 @@
     "verite": 17,
     "hook": "Tu n'es pas fragile.\nTu as appris à tout\nanticiper.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-14T16:51:15Z",
     "musica": "nastelbom-emotional-piano-606704.mp3",
     "duracion": 26.09,
-    "portada_ms": 3300
+    "portada_ms": 3300,
+    "media_id": "18094229819411071"
   },
   {
     "archivo": "0016.mp4",
