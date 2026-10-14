@@ -162,10 +162,11 @@
     "verite": 12,
     "hook": "Tu scrutes sans cesse\nle regard des autres ?\nC'est une cicatrice.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-14T05:49:16Z",
     "musica": "leberch-piano-ballad-611630.mp3",
     "duracion": 30.26,
-    "portada_ms": 4019
+    "portada_ms": 4019,
+    "media_id": "18115839515078968"
   },
   {
     "archivo": "0014.mp4",
