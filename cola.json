@@ -201,10 +201,11 @@
     "verite": null,
     "hook": "Ne lis pas tout\nd'un coup. Lis-en une\nquand le souffle\nte manque.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-14T20:21:17Z",
     "musica": "leberch-calm-piano-586711.mp3",
     "duracion": 24.95,
-    "portada_ms": 3570
+    "portada_ms": 3570,
+    "media_id": "17956757838255062"
   },
   {
     "archivo": "0017.mp4",
