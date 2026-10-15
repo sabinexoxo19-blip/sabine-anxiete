@@ -240,10 +240,11 @@
     "verite": 32,
     "hook": "Inspire 4 secondes.\nExpire 6 secondes.\nRecommence. C'est de\nla biologie.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-15T16:51:49Z",
     "musica": "leberch-piano-calm-525211.mp3",
     "duracion": 30.5,
-    "portada_ms": 6230
+    "portada_ms": 6230,
+    "media_id": "17922348642432562"
   },
   {
     "archivo": "0020.mp4",
