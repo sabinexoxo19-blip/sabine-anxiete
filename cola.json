@@ -253,10 +253,11 @@
     "verite": 65,
     "hook": "Ton anxiété n'est pas\nun état à vie.\nC'est une phase.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-15T20:21:27Z",
     "musica": "nastelbom-emotional-piano-606704.mp3",
     "duracion": 21.94,
-    "portada_ms": 3410
+    "portada_ms": 3410,
+    "media_id": "18133279519670707"
   },
   {
     "archivo": "0021.mp4",
