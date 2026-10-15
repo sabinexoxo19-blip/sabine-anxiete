@@ -227,10 +227,11 @@
     "verite": 3,
     "hook": "Tu t'inquiètes\nparce que tu tiens\nà quelque chose.\nTrès fort.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-15T10:51:51Z",
     "musica": "leberch-piano-ballad-611630.mp3",
     "duracion": 27.56,
-    "portada_ms": 3510
+    "portada_ms": 3510,
+    "media_id": "17992136370060940"
   },
   {
     "archivo": "0019.mp4",
