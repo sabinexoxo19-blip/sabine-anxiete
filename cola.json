@@ -266,10 +266,11 @@
     "verite": 50,
     "hook": "Tu veux une certitude\nà 100 % ? Elle\nn'existe pas.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-16T05:48:57Z",
     "musica": "leberch-calm-piano-586711.mp3",
     "duracion": 26.6,
-    "portada_ms": 3420
+    "portada_ms": 3420,
+    "media_id": "18113379293022470"
   },
   {
     "archivo": "0022.mp4",
