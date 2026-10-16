@@ -279,10 +279,11 @@
     "verite": 14,
     "hook": "Ton besoin\nd'approbation est\nune très vieille\nstratégie.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-16T10:51:15Z",
     "musica": "leberch-flowing-piano-606083.mp3",
     "duracion": 25.87,
-    "portada_ms": 2870
+    "portada_ms": 2870,
+    "media_id": "18058020674562328"
   },
   {
     "archivo": "0023.mp4",
