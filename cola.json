@@ -292,10 +292,11 @@
     "verite": 43,
     "hook": "Se sentir en danger\nn'est pas être\nen danger.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-16T16:51:13Z",
     "musica": "leberch-piano-ballad-611630.mp3",
     "duracion": 26.56,
-    "portada_ms": 2430
+    "portada_ms": 2430,
+    "media_id": "18337635844278710"
   },
   {
     "archivo": "0024.mp4",
