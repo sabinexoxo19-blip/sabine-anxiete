@@ -318,10 +318,11 @@
     "verite": 26,
     "hook": "Mâchoire serrée,\népaules remontées ?\nTon corps attend\nun choc.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-17T05:51:07Z",
     "musica": "nastelbom-emotional-piano-606704.mp3",
     "duracion": 23.39,
-    "portada_ms": 4150
+    "portada_ms": 4150,
+    "media_id": "18178161358449138"
   },
   {
     "archivo": "0026.mp4",
