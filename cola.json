@@ -331,10 +331,11 @@
     "verite": 88,
     "hook": "Une mauvaise journée\naprès plusieurs bonnes ?\nCe n'est pas un échec.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-17T10:51:14Z",
     "musica": "leberch-calm-piano-586711.mp3",
     "duracion": 25.52,
-    "portada_ms": 3900
+    "portada_ms": 3900,
+    "media_id": "18094909742656001"
   },
   {
     "archivo": "0027.mp4",
