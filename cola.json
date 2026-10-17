@@ -344,10 +344,11 @@
     "verite": 61,
     "hook": "Ton intuition murmure.\nTon anxiété hurle.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-17T16:51:18Z",
     "musica": "leberch-flowing-piano-606083.mp3",
     "duracion": 27.78,
-    "portada_ms": 3220
+    "portada_ms": 3220,
+    "media_id": "17914704999540956"
   },
   {
     "archivo": "0028.mp4",
