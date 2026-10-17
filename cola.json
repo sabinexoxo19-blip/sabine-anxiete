@@ -357,10 +357,11 @@
     "verite": 2,
     "hook": "Ton anxiété ? Un garde\ndu corps qui patrouille\nalors que la guerre\nest finie.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-17T20:21:16Z",
     "musica": "leberch-piano-ballad-611630.mp3",
     "duracion": 29.75,
-    "portada_ms": 4250
+    "portada_ms": 4250,
+    "media_id": "18101694962334096"
   },
   {
     "archivo": "0029.mp4",
