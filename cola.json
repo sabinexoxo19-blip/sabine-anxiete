@@ -409,10 +409,11 @@
     "verite": 100,
     "hook": "Tu es bien plus vaste\nque la somme\nde tes peurs.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-18T20:21:13Z",
     "musica": "leberch-flowing-piano-606083.mp3",
     "duracion": 23.35,
-    "portada_ms": 2340
+    "portada_ms": 2340,
+    "media_id": "18112131974153895"
   },
   {
     "archivo": "0033.mp4",
