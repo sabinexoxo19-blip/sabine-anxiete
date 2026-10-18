@@ -396,10 +396,11 @@
     "verite": 31,
     "hook": "Ton anxiété ne se calme\npas toujours par la tête.\nParfois, par le corps.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-18T16:51:11Z",
     "musica": "leberch-calm-piano-586711.mp3",
     "duracion": 27.49,
-    "portada_ms": 4780
+    "portada_ms": 4780,
+    "media_id": "18199822051380149"
   },
   {
     "archivo": "0032.mp4",
