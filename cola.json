@@ -370,10 +370,11 @@
     "verite": 55,
     "hook": "Vérifier te calme\ndeux minutes.\nPuis le doute\nrevient.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-18T05:51:19Z",
     "musica": "leberch-piano-calm-525211.mp3",
     "duracion": 29.04,
-    "portada_ms": 3470
+    "portada_ms": 3470,
+    "media_id": "17883460875626345"
   },
   {
     "archivo": "0030.mp4",
