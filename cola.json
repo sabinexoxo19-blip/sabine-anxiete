@@ -422,10 +422,11 @@
     "verite": 46,
     "hook": "Une belle journée,\nune seule remarque…\net c'est elle\nque tu retiens.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-19T05:50:52Z",
     "musica": "leberch-piano-ballad-611630.mp3",
     "duracion": 22.58,
-    "portada_ms": 3600
+    "portada_ms": 3600,
+    "media_id": "18145025068507794"
   },
   {
     "archivo": "0034.mp4",
