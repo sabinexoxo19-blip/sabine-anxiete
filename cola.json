@@ -461,10 +461,11 @@
     "verite": 69,
     "hook": "N'attends pas que\nla peur parte pour\ncommencer.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-19T20:21:23Z",
     "musica": "leberch-calm-piano-586711.mp3",
     "duracion": 28.01,
-    "portada_ms": 2330
+    "portada_ms": 2330,
+    "media_id": "18118155608076528"
   },
   {
     "archivo": "0037.mp4",
