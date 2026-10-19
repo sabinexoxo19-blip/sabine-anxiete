@@ -448,10 +448,11 @@
     "verite": 10,
     "hook": "« Si je m'arrête,\ntout s'effondre. »\nTon corps est resté\nsur ce réglage.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-19T16:51:44Z",
     "musica": "nastelbom-emotional-piano-606704.mp3",
     "duracion": 28.31,
-    "portada_ms": 4850
+    "portada_ms": 4850,
+    "media_id": "18355649365280810"
   },
   {
     "archivo": "0036.mp4",
