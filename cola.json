@@ -513,10 +513,11 @@
     "verite": 80,
     "hook": "Ton anxiété est\nun circuit appris.\nTu peux en tracer\nun autre.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-20T20:21:22Z",
     "musica": "nastelbom-emotional-piano-606704.mp3",
     "duracion": 28.95,
-    "portada_ms": 3950
+    "portada_ms": 3950,
+    "media_id": "17931685200164339"
   },
   {
     "archivo": "0041.mp4",
