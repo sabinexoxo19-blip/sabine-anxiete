@@ -487,10 +487,11 @@
     "verite": 51,
     "hook": "Tu compares\ntes coulisses avec\nleur vitrine. C'est\ndéloyal.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-20T10:50:46Z",
     "musica": "leberch-piano-ballad-611630.mp3",
     "duracion": 23.47,
-    "portada_ms": 3640
+    "portada_ms": 3640,
+    "media_id": "18127891726882600"
   },
   {
     "archivo": "0039.mp4",
