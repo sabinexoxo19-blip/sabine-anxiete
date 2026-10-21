@@ -552,10 +552,11 @@
     "verite": 11,
     "hook": "Le perfectionnisme\nest une armure\ncontre le rejet.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-21T16:51:54Z",
     "musica": "leberch-piano-ballad-611630.mp3",
     "duracion": 23.56,
-    "portada_ms": 2790
+    "portada_ms": 2790,
+    "media_id": "18109685734929645"
   },
   {
     "archivo": "0044.mp4",
