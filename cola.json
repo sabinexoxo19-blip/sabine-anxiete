@@ -565,10 +565,11 @@
     "verite": 95,
     "hook": "Fais une place\nà ta peur. Mais garde\nles mains sur\nle volant.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-21T20:21:26Z",
     "musica": "leberch-piano-calm-525211.mp3",
     "duracion": 25.18,
-    "portada_ms": 3430
+    "portada_ms": 3430,
+    "media_id": "18124995157898754"
   },
   {
     "archivo": "0045.mp4",
