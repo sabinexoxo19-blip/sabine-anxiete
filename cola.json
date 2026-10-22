@@ -591,10 +591,11 @@
     "verite": 99,
     "hook": "Le futur ne se gère pas\nd'un seul coup.\nUne minute à la fois.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-22T10:51:25Z",
     "musica": "leberch-calm-piano-586711.mp3",
     "duracion": 23.45,
-    "portada_ms": 3610
+    "portada_ms": 3610,
+    "media_id": "18638107930041746"
   },
   {
     "archivo": "0047.mp4",
