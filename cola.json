@@ -617,10 +617,11 @@
     "verite": 4,
     "hook": "Ta réaction est\ndisproportionnée ?\nC'est peut-être\nun écho.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-22T20:21:12Z",
     "musica": "leberch-piano-ballad-611630.mp3",
     "duracion": 29.08,
-    "portada_ms": 3620
+    "portada_ms": 3620,
+    "media_id": "17908747353593339"
   },
   {
     "archivo": "0049.mp4",
