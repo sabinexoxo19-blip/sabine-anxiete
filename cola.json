@@ -578,10 +578,11 @@
     "verite": 42,
     "hook": "« Si ce n'est pas\nparfait, j'ai tout\nraté. »",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-22T05:51:14Z",
     "musica": "nastelbom-emotional-piano-606704.mp3",
     "duracion": 23.91,
-    "portada_ms": 2340
+    "portada_ms": 2340,
+    "media_id": "18491080879129790"
   },
   {
     "archivo": "0046.mp4",
