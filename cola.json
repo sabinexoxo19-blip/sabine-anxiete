@@ -604,10 +604,11 @@
     "verite": 66,
     "hook": "Le calme te paraît\nsuspect ? C'est que tu\nas vécu dans le chaos.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-22T16:51:59Z",
     "musica": "leberch-flowing-piano-606083.mp3",
     "duracion": 25.47,
-    "portada_ms": 3690
+    "portada_ms": 3690,
+    "media_id": "18271839187306167"
   },
   {
     "archivo": "0048.mp4",
