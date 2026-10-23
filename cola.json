@@ -669,10 +669,11 @@
     "verite": 90,
     "hook": "Plus tu luttes contre\nton angoisse, plus elle\ns'accroche.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-23T20:21:15Z",
     "musica": "leberch-flowing-piano-606083.mp3",
     "duracion": 23.49,
-    "portada_ms": 3130
+    "portada_ms": 3130,
+    "media_id": "18016840604971436"
   },
   {
     "archivo": "0053.mp4",
