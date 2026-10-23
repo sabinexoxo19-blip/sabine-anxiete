@@ -630,10 +630,11 @@
     "verite": 28,
     "hook": "Ton ventre est\nton deuxième cerveau\némotionnel.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-23T05:50:32Z",
     "musica": "leberch-piano-calm-525211.mp3",
     "duracion": 25.48,
-    "portada_ms": 2550
+    "portada_ms": 2550,
+    "media_id": "17923339047222693"
   },
   {
     "archivo": "0050.mp4",
