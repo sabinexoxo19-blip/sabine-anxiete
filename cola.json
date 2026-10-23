@@ -656,10 +656,11 @@
     "verite": 6,
     "hook": "Ta peur d'échouer\ncache souvent la peur\nde perdre ta place.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-23T16:51:21Z",
     "musica": "leberch-calm-piano-586711.mp3",
     "duracion": 26.77,
-    "portada_ms": 3000
+    "portada_ms": 3000,
+    "media_id": "18138264475634496"
   },
   {
     "archivo": "0052.mp4",
