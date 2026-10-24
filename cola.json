@@ -682,10 +682,11 @@
     "verite": 16,
     "hook": "Ta peur de décevoir\nest plus forte que\nta peur d'échouer ?",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-24T05:49:39Z",
     "musica": "leberch-piano-ballad-611630.mp3",
     "duracion": 23.14,
-    "portada_ms": 2920
+    "portada_ms": 2920,
+    "media_id": "18434955094150270"
   },
   {
     "archivo": "0054.mp4",
