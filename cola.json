@@ -721,10 +721,11 @@
     "verite": 93,
     "hook": "Écrire tes peurs\nles fait passer\nde l'émotion\nà la raison.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-24T20:21:01Z",
     "musica": "leberch-calm-piano-586711.mp3",
     "duracion": 27.89,
-    "portada_ms": 2890
+    "portada_ms": 2890,
+    "media_id": "18148004566546995"
   },
   {
     "archivo": "0057.mp4",
