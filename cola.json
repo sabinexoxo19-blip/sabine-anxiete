@@ -708,10 +708,11 @@
     "verite": 53,
     "hook": "T'inquiéter ne protège\nde rien. Ça gâche\njuste le trajet.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-24T16:50:15Z",
     "musica": "nastelbom-emotional-piano-606704.mp3",
     "duracion": 23.67,
-    "portada_ms": 3810
+    "portada_ms": 3810,
+    "media_id": "17987063972888599"
   },
   {
     "archivo": "0056.mp4",
