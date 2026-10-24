@@ -695,10 +695,11 @@
     "verite": 64,
     "hook": "Tu peux écouter\nce que ton cerveau dit…\nsans lui obéir.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-24T10:48:40Z",
     "musica": "leberch-piano-calm-525211.mp3",
     "duracion": 24.74,
-    "portada_ms": 3270
+    "portada_ms": 3270,
+    "media_id": "18136591393570055"
   },
   {
     "archivo": "0055.mp4",
