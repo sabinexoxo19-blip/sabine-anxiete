@@ -773,10 +773,11 @@
     "verite": 9,
     "hook": "Tu stresses pour\ndes détails ? Tu portes\nun poids invisible.",
     "fin_livre": true,
-    "publicado": null,
+    "publicado": "2026-10-25T21:22:10Z",
     "musica": "nastelbom-emotional-piano-606704.mp3",
     "duracion": 29.13,
-    "portada_ms": 3360
+    "portada_ms": 3360,
+    "media_id": "18120797866984322"
   },
   {
     "archivo": "0061.mp4",
