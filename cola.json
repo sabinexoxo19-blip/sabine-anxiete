@@ -734,10 +734,11 @@
     "verite": 13,
     "hook": "Mal à l'aise en groupe ?\nTon alarme surveille\nle regard des autres.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-25T06:51:21Z",
     "musica": "leberch-flowing-piano-606083.mp3",
     "duracion": 26.26,
-    "portada_ms": 3890
+    "portada_ms": 3890,
+    "media_id": "18124009804894498"
   },
   {
     "archivo": "0058.mp4",
