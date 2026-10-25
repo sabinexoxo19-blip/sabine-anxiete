@@ -760,10 +760,11 @@
     "verite": 45,
     "hook": "« Je suis comme ça. »\nCette phrase t'empêche\nde changer.",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-25T17:51:47Z",
     "musica": "leberch-piano-calm-525211.mp3",
     "duracion": 25.18,
-    "portada_ms": 3660
+    "portada_ms": 3660,
+    "media_id": "18137469905507002"
   },
   {
     "archivo": "0060.mp4",
