@@ -2,7 +2,7 @@
 
 Livre : *101 Vérités que ton anxiété essaie de te dire* — https://www.amazon.fr/dp/B0GR8JW5V7
 
-Ce dépôt fabrique **120 Reels** lus par une voix (30 jours ; 1 sur 4 se termine sur la photo du livre, avec le lien dans la légende), puis **les publie tout seul, 4 fois par jour**. Il prépare aussi les **épingles Pinterest** (1 image + 1 vidéo par jour) à importer en bloc. Ton ordinateur n'a pas besoin d'être allumé.
+Depuis fin octobre 2026, le robot publie **101 Reels « livre ouvert »** (une vérité par Reel, vraies pages du livre, 13 s, musique au piano), lus dans la file `cola_livre.json` et rangés dans `posts/r001.mp4` à `posts/r101.mp4`, **3 fois par jour**. L'ancienne file `cola.json` (Reels lus par une voix) n'est plus publiée : elle sert d'historique. Le robot prépare aussi les **épingles Pinterest** à importer en bloc. Ton ordinateur n'a pas besoin d'être allumé.
 
 Le robot du livre 1 (dépôt `sabine-reels`) est totalement séparé : rien ici ne le touche.
 
@@ -14,7 +14,7 @@ Le robot du livre 1 (dépôt `sabine-reels`) est totalement séparé : rien ici 
 2. **Azure** prête la voix « Vivienne » (ressource `sabine-voix`, la même que le livre 1). Le palier gratuit suffit : 120 Reels font environ 40 000 caractères, le gratuit en donne 500 000 par mois, pour les deux livres ensemble.
 3. **cron-job.org** réveille le robot toutes les 30 minutes (à :20 et :50). Le robot ne publie qu'aux créneaux.
 
-Publication : **7 h 47, 12 h 47, 18 h 47 et 22 h 17, heure de Paris** (décalés de ceux du livre 1 ; changement d'heure géré tout seul). Un créneau manqué depuis plus de 2 h est abandonné ; jamais deux Reels à moins de 2 h d'écart.
+Publication : **7 h 47, 13 h 17 et 18 h 47, heure de Paris** (décalés de ceux du livre 1 : 8 h 12, 12 h 42, 20 h 12 ; changement d'heure géré tout seul). Un créneau manqué depuis plus de 2 h est abandonné ; jamais deux Reels à moins de 2 h d'écart, y compris avec la dernière publication de l'ancienne file.
 
 ---
 
@@ -36,7 +36,7 @@ Dans cron-job.org : un jeton fine-grained **« reveil livre 2 »**, limité à c
 | Nom | Quand | Rôle |
 |---|---|---|
 | **Fabriquer les Reels** | à la main | vidéos (`posts/`) et file `cola.json`. S'il s'arrête, on le relance : il reprend où il en était. |
-| **Publier sur Instagram** | réveils automatiques | publie le Reel suivant. À la main : **1** = essai, **0** = publier. |
+| **Publier sur Instagram** | réveils automatiques | publie le Reel suivant de `cola_livre.json`. À la main : **1** = essai, **0** = publier. |
 | **Renouveler la clé Instagram** | chaque lundi | prolonge `IG_TOKEN` (seulement si la clé a plus de 24 h). |
 | **Ajouter la musique** | quand des musiques sont ajoutées | refait le son des Reels pas encore publiés. |
 | **Fabriquer les épingles Pinterest** | à la main | images `pines/` (déjà faites) |
@@ -59,6 +59,8 @@ Dans cron-job.org : un jeton fine-grained **« reveil livre 2 »**, limité à c
 ---
 
 ## Les mentions obligatoires
+
+- Reels « livre ouvert » : la légende porte « Images créées par IA, pages réelles du livre. » et, pour les vérités sur l'angoisse, les crises ou les symptômes, « Ce livre ne remplace pas l'accompagnement d'un professionnel de santé. »
 
 - Chaque Reel lu par Vivienne porte **(voix de synthèse)**.
 - Les Reels qui finissent sur la photo du livre portent aussi **(visuel créé par IA)** : la photo est une image IA.
