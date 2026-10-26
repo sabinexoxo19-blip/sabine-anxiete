@@ -786,10 +786,11 @@
     "verite": 47,
     "hook": "« J'ai raté une fois,\ndonc je raterai\ntoujours. »",
     "fin_livre": false,
-    "publicado": null,
+    "publicado": "2026-10-26T06:51:16Z",
     "musica": "leberch-calm-piano-586711.mp3",
     "duracion": 19.78,
-    "portada_ms": 2690
+    "portada_ms": 2690,
+    "media_id": "18226636879339618"
   },
   {
     "archivo": "0062.mp4",
