@@ -19,6 +19,7 @@ API = "https://graph.instagram.com"
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 COLA = os.path.join(RAIZ, "cola_livre.json")            # Reels « livre ouvert » (101 vérités)
 COLA_ANCIENNE = os.path.join(RAIZ, "cola.json")          # anciens Reels : plus publiés, gardés pour l'historique
+EXCLURE = {97}                # vérités retirées (97 : « taux de survie de 100 % », ambigu pour un public fragile)
 AVISO_COLA_BAJA = 9           # moins de 3 jours de Reels à 3 par jour
 
 # Créneaux de publication, heure de Paris. Le robot est réveillé toutes les 30 minutes par GitHub
@@ -108,7 +109,7 @@ def main():
     with open(COLA, encoding="utf-8") as f:
         cola = json.load(f)
 
-    pendientes = [p for p in cola if not p.get("publicado")]
+    pendientes = [p for p in cola if not p.get("publicado") and p.get("verite") not in EXCLURE]
     if os.environ.get("AUTO") == "1":
         ok, raison = faut_il_publier(cola, datetime.now(timezone.utc))
         print(f"Réveil automatique : {raison}.")

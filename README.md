@@ -2,7 +2,7 @@
 
 Livre : *101 Vérités que ton anxiété essaie de te dire* — https://www.amazon.fr/dp/B0GR8JW5V7
 
-Depuis fin octobre 2026, le robot publie **101 Reels « livre ouvert »** (une vérité par Reel, vraies pages du livre, 13 s, musique au piano), lus dans la file `cola_livre.json` et rangés dans `posts/r001.mp4` à `posts/r101.mp4`, **3 fois par jour**. L'ancienne file `cola.json` (Reels lus par une voix) n'est plus publiée : elle sert d'historique. Le robot prépare aussi les **épingles Pinterest** à importer en bloc. Ton ordinateur n'a pas besoin d'être allumé.
+Depuis fin octobre 2026, le robot publie **101 Reels « livre ouvert »** (une vérité par Reel, vraies pages du livre, 13 s, musique au piano), lus dans la file `cola_livre.json` et rangés dans `posts/r001.mp4` à `posts/r101.mp4`, **3 fois par jour** (la vérité 97 est retirée : 100 Reels publiés). Les mêmes Reels partent en **YouTube Shorts** sur la chaîne Sabine Mercier (celle du livre 1), 2 par jour, depuis `cola_youtube.json`. L'ancienne file `cola.json` (Reels lus par une voix) n'est plus publiée : elle sert d'historique. Le robot prépare aussi les **épingles Pinterest** à importer en bloc. Ton ordinateur n'a pas besoin d'être allumé.
 
 Le robot du livre 1 (dépôt `sabine-reels`) est totalement séparé : rien ici ne le touche.
 
@@ -45,12 +45,19 @@ Dans cron-job.org : un jeton fine-grained **« reveil livre 2 »**, limité à c
 
 ---
 
+## YouTube Shorts (même chaîne que le livre 1)
+
+- **10 h 47 et 16 h 47**, heure de Paris (le livre 1 publie à 13 h 12 et 19 h 42 sur la même chaîne).
+- Secrets : `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN` (même projet Google que le livre 1). Sans eux, l'étape YouTube ne fait rien.
+- Si YouTube garde un Short en privé, le robot s'arrête de lui-même (`prive` dans `cola_youtube.json`).
+
 ## Pinterest (même compte que le livre 1)
 
 - Import en bloc : https://fr.pinterest.com/settings/bulk-create-pins/
 - **Plafond : 100 épingles programmées par compte, livre 1 et livre 2 ensemble.** Au-delà, Pinterest refuse les lignes (e-mail « Plus de 100 Épingles programmées »).
 - Jusqu'au 7 novembre 2026 : images à 10 h 15 et 22 h 15 (`pinterest2_prueba.csv`, `pinterest2_mois1.csv`, déjà importés ; `pin2_0052` à `0059` refusées par le plafond, reprises dans le lot 01).
 - À partir du 7 novembre 2026 au soir : **1 image à 11 h 15 + 1 vidéo à 21 h 15** (heure de Paris ; le livre 1 publie à 12 h 15 et 20 h 45).
+- Depuis le 26 octobre 2026, les épingles vidéo sont les Reels « livre ouvert » (`posts/r001.mp4`…, miniature dans `miniatures/`) : `pinterest2_lot00.csv` (1 vidéo par jour à 21 h 15, du 27 octobre au 6 novembre), puis les vidéos des lots 01 à 06 ; les derniers créneaux gardent d'anciens Reels lus par la voix.
 - Fichiers `pinterest2_lot01.csv`, `lot02`… : 14 jours chacun, **à importer 2 ou 3 jours avant leur première date**, jamais plus tôt (plafond).
 - Tableaux propres au livre 2 : « Anxiété : comprendre et apaiser », « Anxiété et corps : respiration, sommeil, détente », « Pensées anxieuses et ruminations », « Citations anxiété et bienveillance ».
 - Un lien différent par épingle : `…/ref=pin2_0001` (images), `…/ref=pin2v_0001` (vidéos).
