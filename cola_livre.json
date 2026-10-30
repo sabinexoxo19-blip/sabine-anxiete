@@ -160,10 +160,11 @@
     "tipo": "livre",
     "verite": 50,
     "decor": "lit",
-    "publicado": null,
+    "publicado": "2026-10-30T12:21:26Z",
     "musica": "leberch-piano-calm-525211.mp3",
     "duracion": 13.0,
-    "portada_ms": 1500
+    "portada_ms": 1500,
+    "media_id": "18119070526794061"
   },
   {
     "archivo": "r015.mp4",
