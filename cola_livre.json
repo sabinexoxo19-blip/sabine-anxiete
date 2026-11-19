@@ -868,10 +868,11 @@
     "tipo": "livre",
     "verite": 23,
     "decor": "plaid",
-    "publicado": null,
+    "publicado": "2026-11-19T06:51:37Z",
     "musica": "leberch-piano-ballad-611630.mp3",
     "duracion": 13.0,
-    "portada_ms": 1500
+    "portada_ms": 1500,
+    "media_id": "18104933423379830"
   },
   {
     "archivo": "r074.mp4",
