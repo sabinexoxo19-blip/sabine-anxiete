@@ -904,10 +904,11 @@
     "tipo": "livre",
     "verite": 6,
     "decor": "plaid",
-    "publicado": null,
+    "publicado": "2026-11-20T06:51:25Z",
     "musica": "leberch-calm-piano-586711.mp3",
     "duracion": 13.0,
-    "portada_ms": 1500
+    "portada_ms": 1500,
+    "media_id": "17874606393644149"
   },
   {
     "archivo": "r077.mp4",
