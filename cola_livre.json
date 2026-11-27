@@ -1156,10 +1156,11 @@
     "tipo": "livre",
     "verite": 64,
     "decor": "plaid",
-    "publicado": null,
+    "publicado": "2026-11-27T06:51:36Z",
     "musica": "leberch-flowing-piano-606083.mp3",
     "duracion": 13.0,
-    "portada_ms": 1500
+    "portada_ms": 1500,
+    "media_id": "17911365573668736"
   },
   {
     "archivo": "r098.mp4",
